@@ -12,20 +12,29 @@ class PostTableViewCell: UITableViewCell {
     
     @IBOutlet weak var title: UILabel!
     @IBOutlet weak var body: UILabel!
+    @IBOutlet weak var favoriteButton: UIButton!
+    
     var disposeBag = DisposeBag()
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        self.selectionStyle = .none
+        self.favoriteButton.isUserInteractionEnabled = false
     }
+    
     override func prepareForReuse() {
         super.prepareForReuse()
         disposeBag = DisposeBag()
     }
     
     func configuePostCell(post:PostModel) {
-        self.title.text = post.title
-        self.body.text = post.body
+        self.title.text = post.title.capitalizingFirstLetter
+        self.body.text = post.body.capitalizingFirstLetter
+    }
+    
+    func updateFavoriteState(isFavorite: Bool) {
+        let imageName = isFavorite ? "heart.fill" : "heart"
+        favoriteButton.setImage(UIImage(systemName: imageName), for: .normal)
     }
     
     override func setSelected(_ selected: Bool, animated: Bool) {

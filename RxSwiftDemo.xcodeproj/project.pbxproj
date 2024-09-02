@@ -14,6 +14,10 @@
 		705F967F2C7CB460003B0813 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 705F967E2C7CB460003B0813 /* Base */; };
 		705F96812C7CB462003B0813 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 705F96802C7CB462003B0813 /* Assets.xcassets */; };
 		705F96842C7CB462003B0813 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 705F96832C7CB462003B0813 /* Base */; };
+		7064FD3E2C818421004F7E5D /* RxBlocking in Frameworks */ = {isa = PBXBuildFile; productRef = 7064FD3D2C818421004F7E5D /* RxBlocking */; };
+		70790A452C81969400248716 /* TextFieldExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70790A442C81969400248716 /* TextFieldExtension.swift */; };
+		70790A472C81F20300248716 /* FavoritePostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70790A462C81F20300248716 /* FavoritePostViewController.swift */; };
+		70790A4A2C82F87A00248716 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70790A492C82F87A00248716 /* TabBarController.swift */; };
 		709C38DC2C7D8A3600B249F1 /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = 709C38DB2C7D8A3600B249F1 /* RxCocoa */; };
 		709C38DE2C7D8A3600B249F1 /* RxRelay in Frameworks */ = {isa = PBXBuildFile; productRef = 709C38DD2C7D8A3600B249F1 /* RxRelay */; };
 		709C38E02C7D8A3600B249F1 /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 709C38DF2C7D8A3600B249F1 /* RxSwift */; };
@@ -36,6 +40,7 @@
 		709C39262C80820800B249F1 /* RxRelay-Dynamic in Embed Frameworks */ = {isa = PBXBuildFile; productRef = 709C39242C80820800B249F1 /* RxRelay-Dynamic */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		709C39292C80820800B249F1 /* RxSwift-Dynamic in Embed Frameworks */ = {isa = PBXBuildFile; productRef = 709C39272C80820800B249F1 /* RxSwift-Dynamic */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		709C392C2C80820800B249F1 /* RxTest-Dynamic in Embed Frameworks */ = {isa = PBXBuildFile; productRef = 709C392A2C80820800B249F1 /* RxTest-Dynamic */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		70B30F102C831F0100A8BB57 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70B30F0F2C831F0100A8BB57 /* StringExtension.swift */; };
 		70BDF6782C7CB69800647BA1 /* RxBlocking-Dynamic in Embed Frameworks */ = {isa = PBXBuildFile; productRef = 70BDF6752C7CB69800647BA1 /* RxBlocking-Dynamic */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		70BDF67D2C7CB69800647BA1 /* RxCocoa-Dynamic in Embed Frameworks */ = {isa = PBXBuildFile; productRef = 70BDF67B2C7CB69800647BA1 /* RxCocoa-Dynamic */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		70BDF6822C7CB69800647BA1 /* RxRelay-Dynamic in Embed Frameworks */ = {isa = PBXBuildFile; productRef = 70BDF6802C7CB69800647BA1 /* RxRelay-Dynamic */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
@@ -77,6 +82,9 @@
 		705F96802C7CB462003B0813 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		705F96832C7CB462003B0813 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		705F96852C7CB462003B0813 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		70790A442C81969400248716 /* TextFieldExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldExtension.swift; sourceTree = "<group>"; };
+		70790A462C81F20300248716 /* FavoritePostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritePostViewController.swift; sourceTree = "<group>"; };
+		70790A492C82F87A00248716 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		709C38CC2C7D891000B249F1 /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		709C38EB2C7D999800B249F1 /* LoginModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginModel.swift; sourceTree = "<group>"; };
 		709C38F02C7D9B7700B249F1 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
@@ -91,6 +99,7 @@
 		709C39172C7F0E2600B249F1 /* PostPersistentDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostPersistentDataService.swift; sourceTree = "<group>"; };
 		709C391A2C7F2D2100B249F1 /* PostTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostTableViewCell.swift; sourceTree = "<group>"; };
 		709C391B2C7F2D2100B249F1 /* PostTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PostTableViewCell.xib; sourceTree = "<group>"; };
+		70B30F0F2C831F0100A8BB57 /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
 		E4D0733A9C6ED0F7621333ED /* Pods_RxSwiftDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RxSwiftDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -100,6 +109,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				709C38E32C7D8AA300B249F1 /* Alamofire in Frameworks */,
+				7064FD3E2C818421004F7E5D /* RxBlocking in Frameworks */,
 				709C38DE2C7D8A3600B249F1 /* RxRelay in Frameworks */,
 				709C38DC2C7D8A3600B249F1 /* RxCocoa in Frameworks */,
 				709C38E02C7D8A3600B249F1 /* RxSwift in Frameworks */,
@@ -133,6 +143,8 @@
 			children = (
 				705F96772C7CB460003B0813 /* AppDelegate.swift */,
 				705F96792C7CB460003B0813 /* SceneDelegate.swift */,
+				70790A432C81967A00248716 /* Extensions */,
+				70790A482C82F83100248716 /* TabBar */,
 				709C39012C7F06B100B249F1 /* CoreData */,
 				709C38FE2C7F062200B249F1 /* Network */,
 				709C38F42C7F013600B249F1 /* PostModule */,
@@ -143,6 +155,23 @@
 				705F96852C7CB462003B0813 /* Info.plist */,
 			);
 			path = RxSwiftDemo;
+			sourceTree = "<group>";
+		};
+		70790A432C81967A00248716 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				70790A442C81969400248716 /* TextFieldExtension.swift */,
+				70B30F0F2C831F0100A8BB57 /* StringExtension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		70790A482C82F83100248716 /* TabBar */ = {
+			isa = PBXGroup;
+			children = (
+				70790A492C82F87A00248716 /* TabBarController.swift */,
+			);
+			path = TabBar;
 			sourceTree = "<group>";
 		};
 		709C38E72C7D994500B249F1 /* LoginModule */ = {
@@ -210,6 +239,7 @@
 			isa = PBXGroup;
 			children = (
 				709C38F82C7F018400B249F1 /* PostViewController.swift */,
+				70790A462C81F20300248716 /* FavoritePostViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -228,7 +258,6 @@
 				709C390D2C7F0C2500B249F1 /* AppDataModel.xcdatamodeld */,
 				709C39142C7F0DAE00B249F1 /* CoreDataSetup.swift */,
 				709C39162C7F0DC600B249F1 /* PostEntity */,
-				709C39172C7F0E2600B249F1 /* PostPersistentDataService.swift */,
 			);
 			path = CoreData;
 			sourceTree = "<group>";
@@ -238,6 +267,7 @@
 			children = (
 				709C39102C7F0D6C00B249F1 /* PostEntity+CoreDataClass.swift */,
 				709C39112C7F0D6C00B249F1 /* PostEntity+CoreDataProperties.swift */,
+				709C39172C7F0E2600B249F1 /* PostPersistentDataService.swift */,
 			);
 			path = PostEntity;
 			sourceTree = "<group>";
@@ -297,6 +327,7 @@
 				709C39242C80820800B249F1 /* RxRelay-Dynamic */,
 				709C39272C80820800B249F1 /* RxSwift-Dynamic */,
 				709C392A2C80820800B249F1 /* RxTest-Dynamic */,
+				7064FD3D2C818421004F7E5D /* RxBlocking */,
 			);
 			productName = RxSwiftDemo;
 			productReference = 705F96742C7CB460003B0813 /* RxSwiftDemo.app */;
@@ -386,16 +417,20 @@
 				709C39182C7F0E2600B249F1 /* PostPersistentDataService.swift in Sources */,
 				709C38F92C7F018400B249F1 /* PostViewController.swift in Sources */,
 				709C391D2C7F2D2100B249F1 /* PostTableViewCell.swift in Sources */,
+				70790A4A2C82F87A00248716 /* TabBarController.swift in Sources */,
 				709C38FD2C7F01AA00B249F1 /* PostModel.swift in Sources */,
 				709C38FB2C7F019400B249F1 /* PostViewModel.swift in Sources */,
 				705F967C2C7CB460003B0813 /* LoginViewController.swift in Sources */,
 				709C39122C7F0D6C00B249F1 /* PostEntity+CoreDataClass.swift in Sources */,
+				70790A472C81F20300248716 /* FavoritePostViewController.swift in Sources */,
 				709C39002C7F063600B249F1 /* NetworkService.swift in Sources */,
 				709C390F2C7F0C2500B249F1 /* AppDataModel.xcdatamodeld in Sources */,
+				70790A452C81969400248716 /* TextFieldExtension.swift in Sources */,
 				709C38EC2C7D999800B249F1 /* LoginModel.swift in Sources */,
 				709C39132C7F0D6C00B249F1 /* PostEntity+CoreDataProperties.swift in Sources */,
 				709C38F12C7D9B7700B249F1 /* LoginViewModel.swift in Sources */,
 				705F96782C7CB460003B0813 /* AppDelegate.swift in Sources */,
+				70B30F102C831F0100A8BB57 /* StringExtension.swift in Sources */,
 				709C39152C7F0DAE00B249F1 /* CoreDataSetup.swift in Sources */,
 				705F967A2C7CB460003B0813 /* SceneDelegate.swift in Sources */,
 			);
@@ -558,7 +593,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -588,7 +623,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -653,6 +688,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		7064FD3D2C818421004F7E5D /* RxBlocking */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 709C38DA2C7D8A2A00B249F1 /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxBlocking;
+		};
 		709C38DB2C7D8A3600B249F1 /* RxCocoa */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 709C38DA2C7D8A2A00B249F1 /* XCRemoteSwiftPackageReference "RxSwift" */;

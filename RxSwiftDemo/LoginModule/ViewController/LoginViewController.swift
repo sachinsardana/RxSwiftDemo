@@ -24,8 +24,14 @@ class LoginViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupUI()
         isButtonEnable(isEnable: false)
         setupLoginForm()
+    }
+    
+    func setupUI() {
+        emailTextField.addLeftPadding(padding: 10)
+        passwordTextField.addLeftPadding(padding: 10)
     }
     
     func isButtonEnable(isEnable:Bool) {
@@ -63,10 +69,27 @@ class LoginViewController: UIViewController {
     }
     
     private func navigateToPostScreen() {
-        guard let postViewController = self.storyboard?.instantiateViewController(withIdentifier: "PostViewController") as? PostViewController else {return}
-        postViewController.setup(with: PostsViewModel(networkService: NetworkService(),
-                                                      coreDataService: PostPersistentDataService()))
-        self.navigationController?.pushViewController(postViewController, animated: true)
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        guard let tabBarController = storyboard.instantiateViewController(withIdentifier: "TabBarController") as? UITabBarController else {
+            print("Failed to instantiate UITabBarController")
+            return
+        }
+        guard let viewControllers = tabBarController.viewControllers else {return}
+        guard let firstTabViewController = viewControllers.first as? PostViewController else {return}
+        let viewModel = PostsViewModel(networkService: NetworkService(),
+                                       coreDataService: PostPersistentDataService())
+        firstTabViewController.setup(with: viewModel)
+        
+        guard let secondTabViewController = viewControllers[1] as? FavoritePostViewController else {return}
+        secondTabViewController.setup(with: viewModel)
+        
+        if let scene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
+           let window = scene.windows.first {
+            window.rootViewController = tabBarController
+            UIView.transition(with: window, duration: 0.5, options: .transitionCrossDissolve, animations: nil, completion: nil)
+        } else {
+            print("Failed to get the window from the current scene")
+        }
     }
 }
 

@@ -10,5 +10,5 @@ struct PostModel : Codable {
     let id : Int
     let body : String
     let title : String
-    let isfavorite : Bool?
+    var isfavorite : Bool?
 }

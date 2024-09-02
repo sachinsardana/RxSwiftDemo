@@ -6,7 +6,7 @@
 //
 import RxSwift
 import RxCocoa
-protocol PostsViewModelProtocol {
+protocol PostsViewModelProtocol: AnyObject {
     var posts: BehaviorRelay<[PostModel]> { get }
     var favorites: BehaviorRelay<[PostModel]> { get }
     func toggleFavorite(post: PostModel)
@@ -49,18 +49,17 @@ class PostsViewModel: PostsViewModelProtocol {
             coreDataService.addFavorite(post)
         }
         favorites.accept(currentFavorites)
+        
+        var updatedPosts = posts.value
+        if let index = updatedPosts.firstIndex(where: { $0.id == post.id }) {
+            updatedPosts[index].isfavorite = post.isfavorite
+        }
+        posts.accept(updatedPosts)
+        coreDataService.savePosts(updatedPosts)
     }
     
     private func updateFavorites() {
         let savedFavorites = coreDataService.loadFavorites()
-        let currentPosts = posts.value
-        let updatedFavorites = savedFavorites.filter { favorite in
-            currentPosts.contains(where: { $0.id == favorite.id })
-        }
-        favorites.accept(updatedFavorites)
-    }
-    
-    func getPosts(for segmentIndex: Int) -> [PostModel] {
-        return segmentIndex == 0 ? posts.value : favorites.value
+        favorites.accept(savedFavorites)
     }
 }

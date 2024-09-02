@@ -18,7 +18,8 @@ class NetworkService {
             AF.request(url).responseDecodable(of: [PostModel].self) { response in
                 switch response.result {
                 case .success(let posts):
-                    observer.onNext(posts)
+                    let sortedPost = posts.sorted(by: {$0.id < $1.id})
+                    observer.onNext(sortedPost)
                     observer.onCompleted()
                 case .failure(let error):
                     observer.onError(error)

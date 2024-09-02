@@ -1,15 +1,15 @@
 //
-//  PostViewController.swift
+//  FavoritePostViewController.swift
 //  RxSwiftDemo
 //
-//  Created by Sachin Sardana on 28/08/24.
+//  Created by Sachin Sardana on 30/08/24.
 //
 
 import UIKit
 import RxSwift
 import RxCocoa
 
-class PostViewController: UIViewController {
+class FavoritePostViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     
@@ -25,13 +25,13 @@ class PostViewController: UIViewController {
         setupTableView()
         setupTableViewDataBinding()
     }
-    
+
     func setupTableView() {
         tableView.register(UINib(nibName: "PostTableViewCell", bundle: nil), forCellReuseIdentifier: "PostCell")
     }
     
     func setupTableViewDataBinding() {
-        self.viewModel.posts
+        self.viewModel.favorites
             .bind(to: tableView.rx.items(cellIdentifier: "PostCell", cellType: PostTableViewCell.self)) { index, post, cell in
                 cell.configuePostCell(post: post)
                 cell.updateFavoriteState(isFavorite: self.viewModel.favorites.value.contains(where: { $0.id == post.id }))
@@ -40,9 +40,8 @@ class PostViewController: UIViewController {
         
         tableView.rx.modelSelected(PostModel.self)
             .subscribe(onNext: { [weak self] post in
-                self?.viewModel.toggleFavorite(post: post)
+                self?.viewModel.toggleFavorite(post: post)    
             })
             .disposed(by: disposeBag)
     }
 }
-

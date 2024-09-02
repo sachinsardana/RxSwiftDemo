@@ -5,7 +5,6 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22685"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -19,46 +18,55 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hGZ-95-aX6">
-                        <rect key="frame" x="10" y="5" width="300" height="18"/>
+                        <rect key="frame" x="10" y="5" width="40" height="18"/>
                         <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                        <nil key="textColor"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kKl-3S-ohs">
-                        <rect key="frame" x="10" y="27.999999999999996" width="300" height="14.333333333333332"/>
+                        <rect key="frame" x="10" y="27.999999999999996" width="40" height="14.333333333333332"/>
                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                        <nil key="textColor"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="91j-zy-WCc">
                         <rect key="frame" x="0.0" y="52.333333333333343" width="320" height="35.666666666666657"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </view>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="49E-sx-nbB">
+                        <rect key="frame" x="289.33333333333331" y="5" width="20.666666666666686" height="22"/>
+                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                        <state key="normal" image="heart" catalog="system"/>
+                        <state key="selected" image="star.fill" catalog="system"/>
+                    </button>
                 </subviews>
                 <constraints>
                     <constraint firstItem="kKl-3S-ohs" firstAttribute="leading" secondItem="hGZ-95-aX6" secondAttribute="leading" id="5LN-OU-fad"/>
                     <constraint firstItem="91j-zy-WCc" firstAttribute="top" secondItem="kKl-3S-ohs" secondAttribute="bottom" constant="10" id="5YV-1U-bOE"/>
-                    <constraint firstAttribute="trailing" secondItem="hGZ-95-aX6" secondAttribute="trailing" constant="10" id="5pw-HS-zlE"/>
                     <constraint firstItem="kKl-3S-ohs" firstAttribute="top" secondItem="hGZ-95-aX6" secondAttribute="bottom" constant="5" id="6Qi-rM-k4B"/>
                     <constraint firstAttribute="bottom" secondItem="91j-zy-WCc" secondAttribute="bottom" id="R0v-Ks-dYf"/>
+                    <constraint firstItem="49E-sx-nbB" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="hGZ-95-aX6" secondAttribute="trailing" constant="5" id="SRf-h6-2hV"/>
                     <constraint firstItem="hGZ-95-aX6" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="5" id="Vff-QC-0y9"/>
                     <constraint firstItem="kKl-3S-ohs" firstAttribute="trailing" secondItem="hGZ-95-aX6" secondAttribute="trailing" id="W3N-Ca-DvK"/>
                     <constraint firstItem="hGZ-95-aX6" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="eEb-Ja-bOJ"/>
                     <constraint firstAttribute="trailing" secondItem="91j-zy-WCc" secondAttribute="trailing" id="ocW-fj-2yQ"/>
+                    <constraint firstItem="49E-sx-nbB" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="5" id="qNw-Nm-K7M"/>
                     <constraint firstItem="91j-zy-WCc" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="vl8-Vn-mG4"/>
+                    <constraint firstAttribute="trailing" secondItem="49E-sx-nbB" secondAttribute="trailing" constant="10" id="vzz-Rs-Q4V"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <connections>
                 <outlet property="body" destination="kKl-3S-ohs" id="gLr-Hf-20T"/>
+                <outlet property="favoriteButton" destination="49E-sx-nbB" id="edj-DF-axH"/>
                 <outlet property="title" destination="hGZ-95-aX6" id="jwR-P0-uC2"/>
             </connections>
             <point key="canvasLocation" x="97.70992366412213" y="35.211267605633807"/>
         </tableViewCell>
     </objects>
     <resources>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
+        <image name="heart" catalog="system" width="128" height="107"/>
+        <image name="star.fill" catalog="system" width="128" height="116"/>
     </resources>
 </document>

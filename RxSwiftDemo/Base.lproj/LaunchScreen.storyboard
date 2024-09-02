@@ -17,27 +17,37 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="RxSwift Demo" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="REf-bk-t8f">
-                                <rect key="frame" x="130" y="426.66666666666669" width="133" height="24"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="qqa-xs-Aqt">
+                                <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="dJw-pL-nL3">
+                                <rect key="frame" x="121.66666666666669" y="363.66666666666669" width="150" height="150.00000000000006"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="150" id="bsg-oH-n6e"/>
+                                    <constraint firstAttribute="width" constant="150" id="t5S-PH-STI"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="REf-bk-t8f" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="jRG-5a-Kj8"/>
-                            <constraint firstItem="REf-bk-t8f" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="uxd-rw-nxR"/>
+                            <constraint firstItem="qqa-xs-Aqt" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="4rL-Sf-znY"/>
+                            <constraint firstAttribute="bottom" secondItem="qqa-xs-Aqt" secondAttribute="bottom" id="Ol8-6g-Ihp"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="qqa-xs-Aqt" secondAttribute="trailing" id="bHQ-Gx-bPZ"/>
+                            <constraint firstItem="dJw-pL-nL3" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="eyV-f5-Wj5"/>
+                            <constraint firstItem="dJw-pL-nL3" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="lsP-M5-K1N"/>
+                            <constraint firstItem="qqa-xs-Aqt" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="tsn-na-70k"/>
                         </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="53" y="375"/>
+            <point key="canvasLocation" x="52.671755725190835" y="374.64788732394368"/>
         </scene>
     </scenes>
     <resources>
+        <image name="background" width="250" height="541.33331298828125"/>
+        <image name="logo" width="60" height="60"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

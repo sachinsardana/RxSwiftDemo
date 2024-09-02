@@ -56,7 +56,7 @@ class PostPersistentDataService {
                     title: postEntity.title ?? "",
                     isfavorite: postEntity.isfavorite
                 )
-            }
+            }.sorted(by: {$0.id < $1.id})
         } catch {
             print("Failed to fetch posts: \(error)")
             return []
