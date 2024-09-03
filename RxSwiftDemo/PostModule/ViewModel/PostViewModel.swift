@@ -15,7 +15,7 @@ protocol PostsViewModelProtocol: AnyObject {
 class PostsViewModel: PostsViewModelProtocol {
     let posts: BehaviorRelay<[PostModel]> = BehaviorRelay(value: [])
     let favorites: BehaviorRelay<[PostModel]> = BehaviorRelay(value: [])
-    private let disposeBag = DisposeBag()
+    let disposeBag = DisposeBag()
     private let coreDataService: PostPersistentDataService
     private let networkService: NetworkService
     
@@ -52,7 +52,7 @@ class PostsViewModel: PostsViewModelProtocol {
         
         var updatedPosts = posts.value
         if let index = updatedPosts.firstIndex(where: { $0.id == post.id }) {
-            updatedPosts[index].isfavorite = post.isfavorite
+            updatedPosts[index].isfavorite?.toggle() // = post.isfavorite
         }
         posts.accept(updatedPosts)
         coreDataService.savePosts(updatedPosts)
