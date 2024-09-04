@@ -11,18 +11,15 @@ import XCTest
 final class PostViewModelTest: XCTestCase {
     private var viewModel: PostsViewModel!
     private var networkService: NetworkService!
-    private var coreDataService: PostPersistentDataService!
-    
+
     override func setUpWithError() throws {
         networkService = NetworkService()
-        coreDataService = PostPersistentDataService()
-        viewModel = PostsViewModel(networkService: networkService, coreDataService: coreDataService)
+        viewModel = PostsViewModel(networkService: networkService)
     }
     
     override func tearDownWithError() throws {
         viewModel = nil
         networkService = nil
-        coreDataService = nil
     }
     
     func testFetchPostsApi() {

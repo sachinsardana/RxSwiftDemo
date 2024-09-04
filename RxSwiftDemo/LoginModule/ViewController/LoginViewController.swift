@@ -76,8 +76,7 @@ class LoginViewController: UIViewController {
         }
         guard let viewControllers = tabBarController.viewControllers else {return}
         guard let firstTabViewController = viewControllers.first as? PostViewController else {return}
-        let viewModel = PostsViewModel(networkService: NetworkService(),
-                                       coreDataService: PostPersistentDataService())
+        let viewModel = PostsViewModel(networkService: NetworkService())
         firstTabViewController.setup(with: viewModel)
         
         guard let secondTabViewController = viewControllers[1] as? FavoritePostViewController else {return}

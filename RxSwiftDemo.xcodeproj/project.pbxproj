@@ -7,11 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		704DFBD42C8712ED00EAE225 /* AppDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 704DFBD22C8712ED00EAE225 /* AppDataModel.xcdatamodeld */; };
+		701AB08A2C88397F006D6737 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 705F967D2C7CB460003B0813 /* Main.storyboard */; };
+		702B5FBB2C8826FC007454F6 /* PostRealmModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 702B5FBA2C8826FC007454F6 /* PostRealmModel.swift */; };
+		702B5FBE2C88288C007454F6 /* PostPersistentDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 702B5FBD2C88288C007454F6 /* PostPersistentDataService.swift */; };
 		705F96782C7CB460003B0813 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 705F96772C7CB460003B0813 /* AppDelegate.swift */; };
 		705F967A2C7CB460003B0813 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 705F96792C7CB460003B0813 /* SceneDelegate.swift */; };
 		705F967C2C7CB460003B0813 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 705F967B2C7CB460003B0813 /* LoginViewController.swift */; };
-		705F967F2C7CB460003B0813 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 705F967E2C7CB460003B0813 /* Base */; };
 		705F96812C7CB462003B0813 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 705F96802C7CB462003B0813 /* Assets.xcassets */; };
 		705F96842C7CB462003B0813 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 705F96832C7CB462003B0813 /* Base */; };
 		70790A452C81969400248716 /* TextFieldExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70790A442C81969400248716 /* TextFieldExtension.swift */; };
@@ -23,10 +24,6 @@
 		709C38FB2C7F019400B249F1 /* PostViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 709C38FA2C7F019400B249F1 /* PostViewModel.swift */; };
 		709C38FD2C7F01AA00B249F1 /* PostModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 709C38FC2C7F01AA00B249F1 /* PostModel.swift */; };
 		709C39002C7F063600B249F1 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 709C38FF2C7F063600B249F1 /* NetworkService.swift */; };
-		709C39122C7F0D6C00B249F1 /* PostEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 709C39102C7F0D6C00B249F1 /* PostEntity+CoreDataClass.swift */; };
-		709C39132C7F0D6C00B249F1 /* PostEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 709C39112C7F0D6C00B249F1 /* PostEntity+CoreDataProperties.swift */; };
-		709C39152C7F0DAE00B249F1 /* CoreDataSetup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 709C39142C7F0DAE00B249F1 /* CoreDataSetup.swift */; };
-		709C39182C7F0E2600B249F1 /* PostPersistentDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 709C39172C7F0E2600B249F1 /* PostPersistentDataService.swift */; };
 		709C391C2C7F2D2100B249F1 /* PostTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 709C391B2C7F2D2100B249F1 /* PostTableViewCell.xib */; };
 		709C391D2C7F2D2100B249F1 /* PostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 709C391A2C7F2D2100B249F1 /* PostTableViewCell.swift */; };
 		70B30F102C831F0100A8BB57 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70B30F0F2C831F0100A8BB57 /* StringExtension.swift */; };
@@ -60,7 +57,8 @@
 /* Begin PBXFileReference section */
 		21CCEB3C510FD671875E96E2 /* Pods-RxSwiftDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxSwiftDemo.debug.xcconfig"; path = "Target Support Files/Pods-RxSwiftDemo/Pods-RxSwiftDemo.debug.xcconfig"; sourceTree = "<group>"; };
 		24BBC5B482E9C6C8BC06A60C /* Pods-RxSwiftDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxSwiftDemo.release.xcconfig"; path = "Target Support Files/Pods-RxSwiftDemo/Pods-RxSwiftDemo.release.xcconfig"; sourceTree = "<group>"; };
-		704DFBD32C8712ED00EAE225 /* AppDataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = AppDataModel.xcdatamodel; sourceTree = "<group>"; };
+		702B5FBA2C8826FC007454F6 /* PostRealmModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostRealmModel.swift; sourceTree = "<group>"; };
+		702B5FBD2C88288C007454F6 /* PostPersistentDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostPersistentDataService.swift; sourceTree = "<group>"; };
 		704DFBD52C87130D00EAE225 /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		704DFBD72C87130D00EAE225 /* Pods_RxSwiftDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Pods_RxSwiftDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		704DFBD92C87130D00EAE225 /* RxCocoa.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = RxCocoa.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -84,15 +82,13 @@
 		709C38FA2C7F019400B249F1 /* PostViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostViewModel.swift; sourceTree = "<group>"; };
 		709C38FC2C7F01AA00B249F1 /* PostModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostModel.swift; sourceTree = "<group>"; };
 		709C38FF2C7F063600B249F1 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
-		709C39102C7F0D6C00B249F1 /* PostEntity+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "PostEntity+CoreDataClass.swift"; sourceTree = "<group>"; };
-		709C39112C7F0D6C00B249F1 /* PostEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "PostEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		709C39142C7F0DAE00B249F1 /* CoreDataSetup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataSetup.swift; sourceTree = "<group>"; };
-		709C39172C7F0E2600B249F1 /* PostPersistentDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostPersistentDataService.swift; sourceTree = "<group>"; };
 		709C391A2C7F2D2100B249F1 /* PostTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostTableViewCell.swift; sourceTree = "<group>"; };
 		709C391B2C7F2D2100B249F1 /* PostTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PostTableViewCell.xib; sourceTree = "<group>"; };
 		70B30F0F2C831F0100A8BB57 /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
 		70B3FCCA2C85DCB900677074 /* RxSwiftDemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RxSwiftDemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		70B3FCD32C85DCFA00677074 /* PostViewModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostViewModelTest.swift; sourceTree = "<group>"; };
+		70B3FCFB2C872BB000677074 /* RxCocoa.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = RxCocoa.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		70B3FCFD2C872BBC00677074 /* RxSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = RxSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E4D0733A9C6ED0F7621333ED /* Pods_RxSwiftDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RxSwiftDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -115,6 +111,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		702B5FB92C8824B6007454F6 /* RealmDB */ = {
+			isa = PBXGroup;
+			children = (
+				702B5FBC2C88282C007454F6 /* PostData */,
+			);
+			path = RealmDB;
+			sourceTree = "<group>";
+		};
+		702B5FBC2C88282C007454F6 /* PostData */ = {
+			isa = PBXGroup;
+			children = (
+				702B5FBA2C8826FC007454F6 /* PostRealmModel.swift */,
+				702B5FBD2C88288C007454F6 /* PostPersistentDataService.swift */,
+			);
+			path = PostData;
+			sourceTree = "<group>";
+		};
 		705F966B2C7CB460003B0813 = {
 			isa = PBXGroup;
 			children = (
@@ -142,7 +155,7 @@
 				705F96792C7CB460003B0813 /* SceneDelegate.swift */,
 				70790A432C81967A00248716 /* Extensions */,
 				70790A482C82F83100248716 /* TabBar */,
-				709C39012C7F06B100B249F1 /* CoreData */,
+				702B5FB92C8824B6007454F6 /* RealmDB */,
 				709C38FE2C7F062200B249F1 /* Network */,
 				709C38F42C7F013600B249F1 /* PostModule */,
 				709C38E72C7D994500B249F1 /* LoginModule */,
@@ -209,7 +222,7 @@
 			isa = PBXGroup;
 			children = (
 				709C39192C7F135000B249F1 /* View */,
-				709C38F72C7F016300B249F1 /* ViewController */,
+				709C38F72C7F016300B249F1 /* ViewControllers */,
 				709C38F62C7F015B00B249F1 /* ViewModel */,
 				709C38F52C7F015500B249F1 /* Model */,
 			);
@@ -232,13 +245,13 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
-		709C38F72C7F016300B249F1 /* ViewController */ = {
+		709C38F72C7F016300B249F1 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
 				709C38F82C7F018400B249F1 /* PostViewController.swift */,
 				70790A462C81F20300248716 /* FavoritePostViewController.swift */,
 			);
-			path = ViewController;
+			path = ViewControllers;
 			sourceTree = "<group>";
 		};
 		709C38FE2C7F062200B249F1 /* Network */ = {
@@ -247,26 +260,6 @@
 				709C38FF2C7F063600B249F1 /* NetworkService.swift */,
 			);
 			path = Network;
-			sourceTree = "<group>";
-		};
-		709C39012C7F06B100B249F1 /* CoreData */ = {
-			isa = PBXGroup;
-			children = (
-				704DFBD22C8712ED00EAE225 /* AppDataModel.xcdatamodeld */,
-				709C39142C7F0DAE00B249F1 /* CoreDataSetup.swift */,
-				709C39162C7F0DC600B249F1 /* PostEntity */,
-			);
-			path = CoreData;
-			sourceTree = "<group>";
-		};
-		709C39162C7F0DC600B249F1 /* PostEntity */ = {
-			isa = PBXGroup;
-			children = (
-				709C39102C7F0D6C00B249F1 /* PostEntity+CoreDataClass.swift */,
-				709C39112C7F0D6C00B249F1 /* PostEntity+CoreDataProperties.swift */,
-				709C39172C7F0E2600B249F1 /* PostPersistentDataService.swift */,
-			);
-			path = PostEntity;
 			sourceTree = "<group>";
 		};
 		709C39192C7F135000B249F1 /* View */ = {
@@ -289,6 +282,8 @@
 		70BDF6722C7CB69800647BA1 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				70B3FCFD2C872BBC00677074 /* RxSwift.framework */,
+				70B3FCFB2C872BB000677074 /* RxCocoa.framework */,
 				704DFBD52C87130D00EAE225 /* Alamofire.framework */,
 				704DFBD72C87130D00EAE225 /* Pods_RxSwiftDemo.framework */,
 				704DFBD92C87130D00EAE225 /* RxCocoa.framework */,
@@ -393,9 +388,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				701AB08A2C88397F006D6737 /* Main.storyboard in Resources */,
 				705F96812C7CB462003B0813 /* Assets.xcassets in Resources */,
 				705F96842C7CB462003B0813 /* Base in Resources */,
-				705F967F2C7CB460003B0813 /* Base in Resources */,
 				709C391C2C7F2D2100B249F1 /* PostTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -456,24 +451,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				709C39182C7F0E2600B249F1 /* PostPersistentDataService.swift in Sources */,
 				709C38F92C7F018400B249F1 /* PostViewController.swift in Sources */,
+				702B5FBB2C8826FC007454F6 /* PostRealmModel.swift in Sources */,
 				709C391D2C7F2D2100B249F1 /* PostTableViewCell.swift in Sources */,
 				70790A4A2C82F87A00248716 /* TabBarController.swift in Sources */,
 				709C38FD2C7F01AA00B249F1 /* PostModel.swift in Sources */,
-				704DFBD42C8712ED00EAE225 /* AppDataModel.xcdatamodeld in Sources */,
 				709C38FB2C7F019400B249F1 /* PostViewModel.swift in Sources */,
 				705F967C2C7CB460003B0813 /* LoginViewController.swift in Sources */,
-				709C39122C7F0D6C00B249F1 /* PostEntity+CoreDataClass.swift in Sources */,
+				702B5FBE2C88288C007454F6 /* PostPersistentDataService.swift in Sources */,
 				70790A472C81F20300248716 /* FavoritePostViewController.swift in Sources */,
 				709C39002C7F063600B249F1 /* NetworkService.swift in Sources */,
 				70790A452C81969400248716 /* TextFieldExtension.swift in Sources */,
 				709C38EC2C7D999800B249F1 /* LoginModel.swift in Sources */,
-				709C39132C7F0D6C00B249F1 /* PostEntity+CoreDataProperties.swift in Sources */,
 				709C38F12C7D9B7700B249F1 /* LoginViewModel.swift in Sources */,
 				705F96782C7CB460003B0813 /* AppDelegate.swift in Sources */,
 				70B30F102C831F0100A8BB57 /* StringExtension.swift in Sources */,
-				709C39152C7F0DAE00B249F1 /* CoreDataSetup.swift in Sources */,
 				705F967A2C7CB460003B0813 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -768,19 +760,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCVersionGroup section */
-		704DFBD22C8712ED00EAE225 /* AppDataModel.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				704DFBD32C8712ED00EAE225 /* AppDataModel.xcdatamodel */,
-			);
-			currentVersion = 704DFBD32C8712ED00EAE225 /* AppDataModel.xcdatamodel */;
-			path = AppDataModel.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-/* End XCVersionGroup section */
 	};
 	rootObject = 705F966C2C7CB460003B0813 /* Project object */;
 }

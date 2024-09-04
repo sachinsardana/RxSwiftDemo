@@ -6,6 +6,7 @@
 //
 import RxSwift
 import RxCocoa
+
 protocol PostsViewModelProtocol: AnyObject {
     var posts: BehaviorRelay<[PostModel]> { get }
     var favorites: BehaviorRelay<[PostModel]> { get }
@@ -16,26 +17,24 @@ class PostsViewModel: PostsViewModelProtocol {
     let posts: BehaviorRelay<[PostModel]> = BehaviorRelay(value: [])
     let favorites: BehaviorRelay<[PostModel]> = BehaviorRelay(value: [])
     let disposeBag = DisposeBag()
-    private let coreDataService: PostPersistentDataService
+    private let persistentService = PostPersistentDataService()
     private let networkService: NetworkService
     
-    init(networkService: NetworkService, coreDataService: PostPersistentDataService) {
+    init(networkService: NetworkService) {
         self.networkService = networkService
-        self.coreDataService = coreDataService
-        
         networkService.fetchPosts()
             .subscribe(onNext: { [weak self] posts in
                 guard let self = self else { return }
                 self.posts.accept(posts)
-                self.coreDataService.savePosts(posts)
+                self.persistentService.savePosts(posts)
                 self.updateFavorites()
             })
             .disposed(by: disposeBag)
         
-        let savedPosts = coreDataService.loadPosts()
+        let savedPosts = persistentService.loadPosts()
         posts.accept(savedPosts)
         
-        let savedFavorites = coreDataService.loadFavorites()
+        let savedFavorites = persistentService.loadFavorites()
         favorites.accept(savedFavorites)
     }
     
@@ -43,10 +42,10 @@ class PostsViewModel: PostsViewModelProtocol {
         var currentFavorites = favorites.value
         if let index = currentFavorites.firstIndex(where: { $0.id == post.id }) {
             currentFavorites.remove(at: index)
-            coreDataService.removeFavorite(post: post)
+            persistentService.removeFavorite(post: post)
         } else {
             currentFavorites.append(post)
-            coreDataService.addFavorite(post)
+            persistentService.addFavorite(post)
         }
         favorites.accept(currentFavorites)
         
@@ -55,11 +54,11 @@ class PostsViewModel: PostsViewModelProtocol {
             updatedPosts[index].isfavorite?.toggle() // = post.isfavorite
         }
         posts.accept(updatedPosts)
-        coreDataService.savePosts(updatedPosts)
+        persistentService.savePosts(updatedPosts)
     }
     
     private func updateFavorites() {
-        let savedFavorites = coreDataService.loadFavorites()
+        let savedFavorites = persistentService.loadFavorites()
         favorites.accept(savedFavorites)
     }
 }
