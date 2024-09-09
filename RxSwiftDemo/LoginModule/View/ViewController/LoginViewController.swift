@@ -14,18 +14,13 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var loginButton: UIButton!
     
-    private let viewModel: LoginViewModel
+    private let viewModel = LoginViewModel(validations: LoginValidations())
     private let disposeBag = DisposeBag()
     
-    required init?(coder: NSCoder) {
-        self.viewModel = LoginViewModel()
-        super.init(coder: coder)
-    }
-    
+    //MARK: Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
-        isButtonEnable(isEnable: false)
         setupLoginForm()
     }
     
@@ -34,11 +29,7 @@ class LoginViewController: UIViewController {
         passwordTextField.addLeftPadding(padding: 10)
     }
     
-    func isButtonEnable(isEnable:Bool) {
-        loginButton.alpha = isEnable ? 1 : 0.5
-        loginButton.isEnabled = isEnable
-    }
-    
+    //Binding data using RxSwift
     private func setupLoginForm() {
         emailTextField.rx.text.orEmpty
             .subscribe(onNext: { [viewModel] email in
@@ -68,27 +59,23 @@ class LoginViewController: UIViewController {
             .disposed(by: disposeBag)
     }
     
+    //Navigating to Post's Screen
     private func navigateToPostScreen() {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         guard let tabBarController = storyboard.instantiateViewController(withIdentifier: "TabBarController") as? UITabBarController else {
             print("Failed to instantiate UITabBarController")
             return
         }
+        
         guard let viewControllers = tabBarController.viewControllers else {return}
-        guard let firstTabViewController = viewControllers.first as? PostViewController else {return}
-        let viewModel = PostsViewModel(networkService: NetworkService())
-        firstTabViewController.setup(with: viewModel)
-        
-        guard let secondTabViewController = viewControllers[1] as? FavoritePostViewController else {return}
-        secondTabViewController.setup(with: viewModel)
-        
-        if let scene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
-           let window = scene.windows.first {
-            window.rootViewController = tabBarController
-            UIView.transition(with: window, duration: 0.5, options: .transitionCrossDissolve, animations: nil, completion: nil)
-        } else {
-            print("Failed to get the window from the current scene")
-        }
+        //Post View Controller
+        guard let postViewController = viewControllers.first as? PostViewController else {return}
+        let viewModel = PostsViewModel(networkService: NetworkService(),persistentService: PostPersistentDataService())
+        postViewController.setup(with: viewModel)
+        //Favorite View Controller
+        guard let favoriteTabViewController = viewControllers[1] as? FavoritePostViewController else {return}
+        favoriteTabViewController.setup(with: viewModel)
+        self.navigationController?.pushViewController(tabBarController, animated: true)
     }
 }
 

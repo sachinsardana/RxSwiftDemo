@@ -8,6 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		701AB08A2C88397F006D6737 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 705F967D2C7CB460003B0813 /* Main.storyboard */; };
+		701AB08D2C8B1888006D6737 /* LoginValidations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 701AB08C2C8B1888006D6737 /* LoginValidations.swift */; };
+		701AB0922C8B1DD6006D6737 /* NetworkReachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 701AB0912C8B1DD6006D6737 /* NetworkReachability.swift */; };
+		701AB0982C8B3435006D6737 /* NetworkServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 701AB0972C8B3435006D6737 /* NetworkServiceProtocol.swift */; };
+		701AB0A32C8EA3DB006D6737 /* LoginValidationProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 701AB0A22C8EA3DB006D6737 /* LoginValidationProtocol.swift */; };
+		701AB0A52C8EA5FC006D6737 /* PostPersistentDataServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 701AB0A42C8EA5FC006D6737 /* PostPersistentDataServiceProtocol.swift */; };
 		702B5FBB2C8826FC007454F6 /* PostRealmModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 702B5FBA2C8826FC007454F6 /* PostRealmModel.swift */; };
 		702B5FBE2C88288C007454F6 /* PostPersistentDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 702B5FBD2C88288C007454F6 /* PostPersistentDataService.swift */; };
 		705F96782C7CB460003B0813 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 705F96772C7CB460003B0813 /* AppDelegate.swift */; };
@@ -57,6 +62,11 @@
 /* Begin PBXFileReference section */
 		21CCEB3C510FD671875E96E2 /* Pods-RxSwiftDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxSwiftDemo.debug.xcconfig"; path = "Target Support Files/Pods-RxSwiftDemo/Pods-RxSwiftDemo.debug.xcconfig"; sourceTree = "<group>"; };
 		24BBC5B482E9C6C8BC06A60C /* Pods-RxSwiftDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxSwiftDemo.release.xcconfig"; path = "Target Support Files/Pods-RxSwiftDemo/Pods-RxSwiftDemo.release.xcconfig"; sourceTree = "<group>"; };
+		701AB08C2C8B1888006D6737 /* LoginValidations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginValidations.swift; sourceTree = "<group>"; };
+		701AB0912C8B1DD6006D6737 /* NetworkReachability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkReachability.swift; sourceTree = "<group>"; };
+		701AB0972C8B3435006D6737 /* NetworkServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkServiceProtocol.swift; sourceTree = "<group>"; };
+		701AB0A22C8EA3DB006D6737 /* LoginValidationProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginValidationProtocol.swift; sourceTree = "<group>"; };
+		701AB0A42C8EA5FC006D6737 /* PostPersistentDataServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostPersistentDataServiceProtocol.swift; sourceTree = "<group>"; };
 		702B5FBA2C8826FC007454F6 /* PostRealmModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostRealmModel.swift; sourceTree = "<group>"; };
 		702B5FBD2C88288C007454F6 /* PostPersistentDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostPersistentDataService.swift; sourceTree = "<group>"; };
 		704DFBD52C87130D00EAE225 /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -111,6 +121,40 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		701AB08E2C8B1CE0006D6737 /* TableViewCells */ = {
+			isa = PBXGroup;
+			children = (
+				709C391A2C7F2D2100B249F1 /* PostTableViewCell.swift */,
+				709C391B2C7F2D2100B249F1 /* PostTableViewCell.xib */,
+			);
+			path = TableViewCells;
+			sourceTree = "<group>";
+		};
+		701AB0902C8B1D71006D6737 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				701AB0A42C8EA5FC006D6737 /* PostPersistentDataServiceProtocol.swift */,
+				701AB0972C8B3435006D6737 /* NetworkServiceProtocol.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		701AB0A12C8EA3C0006D6737 /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				701AB0A22C8EA3DB006D6737 /* LoginValidationProtocol.swift */,
+			);
+			path = Protocol;
+			sourceTree = "<group>";
+		};
+		701AB0A62C8EBD2D006D6737 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				709C38E92C7D996A00B249F1 /* ViewController */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		702B5FB92C8824B6007454F6 /* RealmDB */ = {
 			isa = PBXGroup;
 			children = (
@@ -187,8 +231,9 @@
 		709C38E72C7D994500B249F1 /* LoginModule */ = {
 			isa = PBXGroup;
 			children = (
+				701AB0A62C8EBD2D006D6737 /* View */,
+				701AB0A12C8EA3C0006D6737 /* Protocol */,
 				709C38EA2C7D997700B249F1 /* ViewModel */,
-				709C38E92C7D996A00B249F1 /* ViewController */,
 				709C38E82C7D995400B249F1 /* Model */,
 			);
 			path = LoginModule;
@@ -214,6 +259,7 @@
 			isa = PBXGroup;
 			children = (
 				709C38F02C7D9B7700B249F1 /* LoginViewModel.swift */,
+				701AB08C2C8B1888006D6737 /* LoginValidations.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -221,8 +267,8 @@
 		709C38F42C7F013600B249F1 /* PostModule */ = {
 			isa = PBXGroup;
 			children = (
+				701AB0902C8B1D71006D6737 /* Protocols */,
 				709C39192C7F135000B249F1 /* View */,
-				709C38F72C7F016300B249F1 /* ViewControllers */,
 				709C38F62C7F015B00B249F1 /* ViewModel */,
 				709C38F52C7F015500B249F1 /* Model */,
 			);
@@ -258,6 +304,7 @@
 			isa = PBXGroup;
 			children = (
 				709C38FF2C7F063600B249F1 /* NetworkService.swift */,
+				701AB0912C8B1DD6006D6737 /* NetworkReachability.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -265,8 +312,8 @@
 		709C39192C7F135000B249F1 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				709C391A2C7F2D2100B249F1 /* PostTableViewCell.swift */,
-				709C391B2C7F2D2100B249F1 /* PostTableViewCell.xib */,
+				709C38F72C7F016300B249F1 /* ViewControllers */,
+				701AB08E2C8B1CE0006D6737 /* TableViewCells */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -454,8 +501,12 @@
 				709C38F92C7F018400B249F1 /* PostViewController.swift in Sources */,
 				702B5FBB2C8826FC007454F6 /* PostRealmModel.swift in Sources */,
 				709C391D2C7F2D2100B249F1 /* PostTableViewCell.swift in Sources */,
+				701AB0A32C8EA3DB006D6737 /* LoginValidationProtocol.swift in Sources */,
 				70790A4A2C82F87A00248716 /* TabBarController.swift in Sources */,
+				701AB0982C8B3435006D6737 /* NetworkServiceProtocol.swift in Sources */,
+				701AB0A52C8EA5FC006D6737 /* PostPersistentDataServiceProtocol.swift in Sources */,
 				709C38FD2C7F01AA00B249F1 /* PostModel.swift in Sources */,
+				701AB0922C8B1DD6006D6737 /* NetworkReachability.swift in Sources */,
 				709C38FB2C7F019400B249F1 /* PostViewModel.swift in Sources */,
 				705F967C2C7CB460003B0813 /* LoginViewController.swift in Sources */,
 				702B5FBE2C88288C007454F6 /* PostPersistentDataService.swift in Sources */,
@@ -467,6 +518,7 @@
 				705F96782C7CB460003B0813 /* AppDelegate.swift in Sources */,
 				70B30F102C831F0100A8BB57 /* StringExtension.swift in Sources */,
 				705F967A2C7CB460003B0813 /* SceneDelegate.swift in Sources */,
+				701AB08D2C8B1888006D6737 /* LoginValidations.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

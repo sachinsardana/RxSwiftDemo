@@ -26,12 +26,12 @@ class PostTableViewCell: UITableViewCell {
         super.prepareForReuse()
         disposeBag = DisposeBag()
     }
-    
+    // Configure UI for post cell
     func configuePostCell(post:PostModel) {
         self.title.text = post.title.capitalizingFirstLetter
         self.body.text = post.body.capitalizingFirstLetter
     }
-    
+    // Update favorite button state
     func updateFavoriteState(isFavorite: Bool) {
         let imageName = isFavorite ? "heart.fill" : "heart"
         favoriteButton.setImage(UIImage(systemName: imageName), for: .normal)

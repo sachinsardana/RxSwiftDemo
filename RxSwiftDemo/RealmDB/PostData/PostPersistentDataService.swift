@@ -7,7 +7,7 @@
 
 import RealmSwift
 
-class PostPersistentDataService {
+class PostPersistentDataService: PostPersistentDataServiceProtocol {
     private let realm: Realm
     
     init(realm: Realm = try! Realm()) {
@@ -49,7 +49,7 @@ class PostPersistentDataService {
         }.sorted(by: { $0.id < $1.id })
     }
     
-    func addFavorite(_ post: PostModel) {
+    func addFavorite(post: PostModel) {
         do {
             try realm.write({
                 if let postEntity = realm.object(ofType: PostRealmModel.self, forPrimaryKey: post.id) {

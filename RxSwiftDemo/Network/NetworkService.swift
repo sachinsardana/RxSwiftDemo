@@ -9,9 +9,9 @@ import Foundation
 import Alamofire
 import RxSwift
 
-class NetworkService {
+class NetworkService: NetworkServiceProtocol {
     private let baseURL = "https://jsonplaceholder.typicode.com"
-
+    // Fetching Posts from network
     func fetchPosts() -> Observable<[PostModel]> {
         let url = "\(baseURL)/posts"
         return Observable.create { observer in

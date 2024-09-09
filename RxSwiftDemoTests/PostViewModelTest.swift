@@ -4,37 +4,40 @@
 //
 //  Created by Sachin Sardana on 02/09/24.
 //
-
-import XCTest
 @testable import RxSwiftDemo
+import XCTest
+import RxSwift
+import RxCocoa
 
 final class PostViewModelTest: XCTestCase {
     private var viewModel: PostsViewModel!
-    private var networkService: NetworkService!
-
+    var mockNetworkService: MockNetworkService!
+    
     override func setUpWithError() throws {
-        networkService = NetworkService()
-        viewModel = PostsViewModel(networkService: networkService)
+        mockNetworkService = MockNetworkService()
+        viewModel = PostsViewModel(networkService: mockNetworkService,
+                                   persistentService: PostPersistentDataService())
     }
     
     override func tearDownWithError() throws {
         viewModel = nil
-        networkService = nil
+        mockNetworkService = nil
     }
-    
+    //Testing Post API Method by using mock data
     func testFetchPostsApi() {
         let expectation = XCTestExpectation(description: "Posts fetched successfully")
+        let posts = [PostModel(id: 1, body: "ABC", title: "Post 1")]
+        mockNetworkService.fetchPostsResult = .success(posts)
+        viewModel.fetchPosts()
         viewModel.posts.asObservable()
-            .skip(1)
             .subscribe(onNext: { fetchedPosts in
                 XCTAssertNotNil(fetchedPosts)
                 XCTAssertTrue(fetchedPosts.count > 0)
                 expectation.fulfill()
             })
             .disposed(by: viewModel.disposeBag)
-        wait(for: [expectation], timeout: 10.0)
     }
-    
+    //Testing Adding Post To Favorite
     func testAddsPostToFavorites() {
         let post = PostModel(id: 1, body: "ABC", title: "Post 1", isfavorite: false)
         viewModel.posts.accept([post])
@@ -45,7 +48,7 @@ final class PostViewModelTest: XCTestCase {
             XCTAssertTrue(updatedPost.isfavorite == true)
         }
     }
-    
+    //Testing Removing Post From Favorite
     func testRemovePostToFavorites() {
         let post = PostModel(id: 1, body: "ABC", title: "Post 1", isfavorite: true)
         viewModel.posts.accept([post])
@@ -56,5 +59,24 @@ final class PostViewModelTest: XCTestCase {
             XCTAssertTrue(updatedPost.isfavorite == false)
         }
     }
+}
+
+//Mock Data Class
+class MockNetworkService: NetworkServiceProtocol {
+    var fetchPostsResult: Result<[PostModel], Error>?
     
+    func fetchPosts() -> Observable<[PostModel]> {
+        return Observable.create { observer in
+            if let result = self.fetchPostsResult {
+                switch result {
+                case .success(let posts):
+                    observer.onNext(posts)
+                    observer.onCompleted()
+                case .failure(let error):
+                    observer.onError(error)
+                }
+            }
+            return Disposables.create()
+        }
+    }
 }
